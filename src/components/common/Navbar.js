@@ -12,11 +12,8 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { pages, settings } from '../../static/helper/constant'
 
-
-
-const pages = { 'view': 'View Current Closet', 'add': 'Add Clothing Item', 'create': 'Create Outfit' };
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);

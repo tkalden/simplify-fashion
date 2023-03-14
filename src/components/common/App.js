@@ -5,7 +5,6 @@ import RouterFunction from '../router/Router';
 function App() {
   return (
     <RouterFunction />
-
   );
 }
 
