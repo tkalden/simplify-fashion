@@ -1,10 +1,17 @@
 import React from 'react';
 import RouterFunction from '../router/Router';
+import ClothProvider from "../../context/clothProvider";
 
 
-function App() {
+const App = () => {
+
+
   return (
-    <RouterFunction />
+    <ClothProvider>
+      <div className="App">
+        <RouterFunction />
+      </div>
+    </ClothProvider>
   );
 }
 

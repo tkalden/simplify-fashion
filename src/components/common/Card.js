@@ -1,32 +1,40 @@
-import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import React, { useContext } from 'react';
+import ClothContext from '../../context/clothContext';
 
-export default function ClothingCard({ imageURL, title, description }) {
+export default function ClothingCard({ item, closet }) {
+    const clothContext = useContext(ClothContext);
+    const { addToCloset } = clothContext;
+    function update() {
+        addToCloset(item)
+    };
+
     return (
         <Card sx={{ maxWidth: 400 }}>
             <CardMedia
                 component="img"
                 alt="green iguana"
-                height="500 "
-                image={imageURL}
+                height="300 "
+                image={item.imageURL}
             />
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                    {title}
+                    {item.title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    {description}
+                    {item.description}
                 </Typography>
             </CardContent>
             <CardActions>
                 <Button size="small">Try</Button>
-                <Button size="small">Add</Button>
+                {!closet ? <Button onClick={update} size="small">Add</Button> : ""}
             </CardActions>
+
         </Card>
     );
 }

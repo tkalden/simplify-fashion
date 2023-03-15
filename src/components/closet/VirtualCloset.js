@@ -1,11 +1,20 @@
 import ClothingCarousel from '../common/Carousel'
+import React from 'react';
 
-export default function VirtualCloset({ currentClothing }) {
+
+export default function VirtualCloset({ closetClothes, loading }) {
 
   return (
-    <div>
-      <ClothingCarousel items={currentClothing} />
+    <div className='posts'>
+      <div className="container">
+        {
+          !loading ? (
+            <><h1>Dress</h1><ClothingCarousel items={closetClothes} closet={true} /></>
+          ) : (
+            <div>Loading...</div>
+          )
+        }
+      </div>
     </div>
-  );
+  )
 }
-

@@ -1,0 +1,65 @@
+{
+    "current-clothes": [
+        {
+            "title": "White Dress",
+            "description": "This is white dress that goes well with the dddddd",
+            "imageURL": "/images/dress/white-glittering-dress.jpg",
+            "type": "dress"
+        },
+        {
+            "title": "Zebra Dress",
+            "description": "This is white dress that goes well with the dddddd",
+            "imageURL": "/images/dress/zebra-dress.jpg",
+            "type": "dress"
+        },
+        {
+            "title": "Striped Dress",
+            "description": "This is white dress that goes well with the dddddd",
+            "imageURL": "/images/dress/striped-dress.jpg"
+        },
+        {
+            "title": "Dot Dress",
+            "description": "This is white dress that goes well with the dddddd",
+            "imageURL": "/images/dress/dot-dress.jpg",
+            "type": "dress"
+        },
+        {
+            "title": "Plain Black Dress",
+            "description": "This is white dress that goes well with the dddddd",
+            "imageURL": "/images/dress/plain-black-dress.jpg",
+            "type": "dress"
+        }
+    ],
+    "market-clothes": [
+        {
+            "title": "Black Sandal ",
+            "description": "This is white dress that goes well with the dddddd",
+            "imageURL": "/images/shoes/black-sandal.jpg",
+            "type": "shoes"
+        },
+        {
+            "title": "Green Heel",
+            "description": "This is white dress that goes well with the dddddd",
+            "imageURL": "/images/shoes/green-heel.jpg",
+            "type": "shoes"
+        },
+        {
+            "title": "Leather Pointy Shoes",
+            "description": "This is white dress that goes well with the dddddd",
+            "imageURL": "/images/shoes/leather-pointy-shoes.jpg",
+            "type": "shoes"
+        },
+        {
+            "title": "Vans Shoes",
+            "description": "This is white dress that goes well with the dddddd",
+            "imageURL": "/images/shoes/vans-shoes.jpg",
+            "type": "shoes"
+        },
+        {
+            "title": "White Strap Shoes",
+            "description": "This is white dress that goes well with the dddddd",
+            "imageURL": "/images/shoes/white-strap-shoes.jpg",
+            "type": "shoes"
+        }
+    ]
+}

@@ -4,7 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import ClothingCard from './Card';
 import { responsive } from '../../static/helper/constant'
 
-export default function ClothingCarousel({ items }) {
+export default function ClothingCarousel({ items, closet }) {
     return (
         <Carousel
             swipeable={false}
@@ -25,7 +25,7 @@ export default function ClothingCarousel({ items }) {
             itemClass="carousel-item-padding-40-px"
         >
             {
-                items.map((item) => <ClothingCard key={item.title} imageURL={item.imageURL} title={item.title} description={item.description} />)
+                items.map((item, i) => <ClothingCard key={i} item={item} closet={closet} />)
             }
         </Carousel>
     )

@@ -1,16 +1,20 @@
 
-import { folder } from '../../static/helper/constant'
+import ClothingCarousel from '../common/Carousel'
+import React from 'react';
 
-export default function VirtualTryOn(props) {
-    const test =
-    {
-        "title": "Black Sandal ",
-        "description": "This is white dress that goes well with the dddddd",
-        "imageURL": folder["shoe-folder"] + "/black-sandal.jpg"
+export default function VirtualTryOn({ marketClothes, loading }) {
 
-    }
     return (
-        <button onClick={() => props.updateCurrentClothing(oldArray => [...oldArray, test])}>Add</button>
-
-    );
+        <div className='posts'>
+            <div className="container">
+                {
+                    !loading ? (
+                        <><h1>Dress</h1><ClothingCarousel items={marketClothes} closet={false} /></>
+                    ) : (
+                        <div>Loading...</div>
+                    )
+                }
+            </div>
+        </div>
+    )
 }
