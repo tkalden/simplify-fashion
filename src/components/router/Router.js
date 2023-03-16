@@ -7,31 +7,27 @@ import VirtualTryOn from '../closet/VirtualTryOn';
 import ClothContext from '../../context/clothContext';
 import { useEffect, useContext } from 'react';
 
-
-
-
 function RouterFunction() {
   const clothContext = useContext(ClothContext);
-  const { marketClothes, closetClothes, getClosetClothes, getMarketClothes, loading } = clothContext;
+  const { getClosetClothes, getMarketClothes } = clothContext;
   useEffect(() => {
     getClosetClothes();
     getMarketClothes();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  useEffect(() => {
-  }, [closetClothes])
 
+  //closet-cart doesn't resets its newClothingList when the its page is loaded. Need to figure out how to pass the data without getting reset.
+  //for now we can add the component within virtual try on 
   return (
     <Router>
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/virtual-try-on" element={<VirtualTryOn marketClothes={marketClothes} loading={loading} />} />
-        <Route path="/virtual-closet" element={<VirtualCloset closetClothes={closetClothes} loading={loading} />} />
+        <Route path="/virtual-try-on" element={<VirtualTryOn />} />
+        <Route path="/virtual-closet" element={<VirtualCloset />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
     </Router>
-
   );
 }
 

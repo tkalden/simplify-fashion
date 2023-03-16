@@ -26,11 +26,6 @@ export default (state, action) => {
                 ...state,
                 marketClothes: action.payload
             };
-        case 'ADD_TO_CLOSET':
-            return {
-                ...state,
-                closetClothes: [...state.closetClothes, action.payload]
-            };
         default:
             return state;
     }

@@ -6,8 +6,10 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import React, { useContext } from 'react';
 import ClothContext from '../../context/clothContext';
+import Tooltip from '@mui/material/Tooltip';
 
-export default function ClothingCard({ item, closet }) {
+
+export default function ClothingCard({ item, closet, tryOn }) {
     const clothContext = useContext(ClothContext);
     const { addToCloset } = clothContext;
     function update() {
@@ -31,8 +33,11 @@ export default function ClothingCard({ item, closet }) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">Try</Button>
-                {!closet ? <Button onClick={update} size="small">Add</Button> : ""}
+                <Tooltip title="Try On Virtual Model">
+                    <Button size="small">Try</Button>
+                </Tooltip>
+                {!closet ? <Tooltip title="Add To Virtual Closet">
+                    <Button onClick={update} size="small">Add </Button></Tooltip> : ""}
             </CardActions>
 
         </Card>

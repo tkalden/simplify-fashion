@@ -1,4 +1,4 @@
-import React, { useReducer, useCallback } from 'react';
+import React, { useReducer } from 'react';
 import ClothContext from './clothContext';
 import clothReducer from './clothReducer';
 
@@ -49,14 +49,22 @@ const ClothProvider = props => {
         }
     };
     // AddToCloset
-    function addToCloset(e) {
+    const addToClothingList = (item) => {
+        console.log(item)
         try {
-            console.log(e)
-            dispatch({ type: 'ADD_TO_CLOSET', payload: e });
+            fetch("/current-clothes", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(item)
+            }
+            );
         } catch (err) {
-            console.log(err);
+            console.log(err)
         }
-    };
+    }
+
     return (
         <ClothContext.Provider
             value={{
@@ -67,7 +75,7 @@ const ClothProvider = props => {
                 getClosetClothes: getClosetClothes,
                 getMarketClothes: getMarketClothes,
                 getClothesByType,
-                addToCloset: addToCloset
+                addToCloset: addToClothingList,
             }}
         >
             {props.children}
