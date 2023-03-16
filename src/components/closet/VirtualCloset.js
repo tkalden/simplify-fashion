@@ -9,17 +9,15 @@ export default function VirtualCloset() {
   const groupedClothes = groupBy(closetClothes, 'type')
   return (
     <div className='posts'>
-      <div className="container">
-        {
-          !loading ? (
-            Object.entries(groupedClothes)
-              .map(([key, value]) =>
-                <><h1>{key}</h1><ClothingCarousel items={value} closet={true} /></>
-              )) : (
-            <div>Loading...</div>
-          )
-        }
-      </div>
+      {
+        !loading ? (
+          Object.entries(groupedClothes)
+            .map(([key, value]) =>
+              <><h1>{key}</h1><ClothingCarousel items={value} closet={true} /></>
+            )) : (
+          <div>Loading...</div>
+        )
+      }
     </div>
   )
 }

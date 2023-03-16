@@ -4,28 +4,27 @@ import "react-multi-carousel/lib/styles.css";
 import ClothingCard from './Card';
 import { responsive } from '../../static/helper/constant'
 
-export default function ClothingCarousel({ items, closet }) {
+export default function ClothingCarousel(props) {
     return (
         <Carousel
             swipeable={false}
-            draggable={false}
+            draggable={true}
             showDots={true}
             responsive={responsive}
             ssr={true} // means to render carousel on server-side.
             infinite={true}
-            //autoPlay={this.props.deviceType !== "mobile" ? true : false}
             autoPlaySpeed={1000}
             keyBoardControl={true}
             customTransition="all .5"
             transitionDuration={500}
             containerClass="carousel-container"
             removeArrowOnDeviceType={["tablet", "mobile"]}
-            //deviceType={this.props.deviceType}
+            deviceType={props.deviceType}
             dotListClass="custom-dot-list-style"
-            itemClass="carousel-item-padding-40-px"
+            itemClass="carousel-item-padding-100-px"
         >
             {
-                items.map((item, i) => <ClothingCard key={i} item={item} closet={closet} />)
+                props.items.map((item, i) => <ClothingCard key={i} item={item} closet={props.closet} />)
             }
         </Carousel>
     )

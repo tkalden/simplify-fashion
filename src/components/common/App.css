@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.5;
+}
+
+.container {
+    padding: 16px 16px;
+    margin: auto;
+}
+
+
+.posts {
+    padding: 16px 16px;
+}
+
+
+@media(max-width: 768px) {
+    .posts {
+        padding: 16px 16px;
+    }
+}
+
+@media(max-width: 600px) {
+    .posts {
+        padding: 16px 16px;
+    }
+}
